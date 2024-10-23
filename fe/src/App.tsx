@@ -1,20 +1,17 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import {
-  Clear,
-  Page404,
-} from './components'
+import { Waiting, Card, Page404 } from './components'
 
 const App = () => {
 
   return (
     <BrowserRouter>
-        <div className="App">
-          <Routes>
-            <Route path="/" element={<Clear />} />
-            <Route path="/happyscreen" element={<Clear />} />
-            <Route path="*" element={<Page404 />} />
-          </Routes>
-        </div>
+      <div className="App">
+        <Routes>
+          <Route path="/waiting" element={<Waiting />} />
+          <Route path="/card" element={<Card />} />
+          <Route path="*" element={<Page404 />} />
+        </Routes>
+      </div>
     </BrowserRouter>
   )
 }

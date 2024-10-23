@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  position: inherit;
+}
+
+.question {
+  margin: 0;
+  height: 60px;
+  border-bottom: solid 2px #eeeeee;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.questionBox {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  background-color: #f9f9f9;
+  border: solid 3px #cccccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+}
+
+.cards > * {
+  margin: 10px auto;
+}
+
+.questionBox > * {
+  margin: 10px;
+}
