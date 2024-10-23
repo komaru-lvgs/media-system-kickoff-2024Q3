@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styles from './index.module.css'
 
 type SingleCardProperties = {
@@ -39,6 +39,7 @@ export const SingleCard: React.FC<SingleCardProperties> = ({
             <img
               src={`images/icon/${cardState}.png`}
               style={{ width: '50px' }}
+              alt={`card${cardIndex}`}
             />
           </div>
         ) : null}

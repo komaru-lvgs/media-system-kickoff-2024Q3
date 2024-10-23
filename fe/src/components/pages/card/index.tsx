@@ -23,6 +23,7 @@ export const Card: React.FC = () => {
     setCardsState([0, 0, 0, 0, 0])
   }
 
+  // 順番を選択
   const handleClick = (cardNumber: number) => {
     console.log(cardsState)
 
@@ -37,9 +38,12 @@ export const Card: React.FC = () => {
     setCardsState(updateCardsState)
   }
 
+  // 
+
   return (
     <>
       <div className={styles.container}>
+        {/* メイン部分 */}
         <div className={styles.question}>
           <div className={styles.questionBox}>
             <div className={styles.questionTitle}>お題</div>
@@ -63,25 +67,39 @@ export const Card: React.FC = () => {
               src="/images/team.png"
               className={styles.teamMember}
               onClick={undefined}
+              alt="team"
             />
             <img
               src="/images/confirmation.png"
               className={styles.confirmation}
               onClick={undefined}
+              alt="confirmation"
             />
             <img
               src="/images/trashButton.png"
               className={styles.resetImage}
               onClick={resetState}
+              alt="trushButton"
             />
           </div>
         </div>
+
+        {/* モーダル部分 */}
         <div className={styles.modalContainer}>
           <div className={styles.modalBox}>
             <div className={styles.modalIcon}>
-              <img src="" className={styles.iconImage} alt="icon" />
+              <img
+                src="/images/exclamation.png"
+                className={styles.iconImage}
+                alt="icon"
+              />
             </div>
-            ああああ
+            <div className={styles.modalMessage}>
+              以下の内容で投票します
+              <br />
+              よろしいですか？
+            </div>
+            <div className={styles.cards}></div>
           </div>
         </div>
       </div>

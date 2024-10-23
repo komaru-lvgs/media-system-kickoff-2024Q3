@@ -78,8 +78,19 @@
 .modalBox {
   position: relative;
   display: flex;
-  justify-content: center;
-  vertical-align: middle;
+  flex-direction: column;
+}
+
+.modalBox > * {
+  text-align: center;
+}
+
+.modalIcon {
+  margin-top: 10px;
+}
+
+.modalMessage {
+  margin-bottom: 10px;
 }
 
 .iconImage {
