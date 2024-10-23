@@ -1,0 +1,55 @@
+version: '3.8'
+services:
+  frontend:
+    build: ./fe
+    environment:
+      REACT_APP_API_URL: '${BE_URL}'
+    volumes:
+      - ./fe:/usr/src/app/fe
+    command: npm start
+    ports:
+      - '3000:3000'
+
+  dev-postgres:
+    image: postgres:15.1-alpine
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: '${POSTGRES_USER}'
+      POSTGRES_PASSWORD: '${POSTGRES_PW}'
+      POSTGRES_DB: '${POSTGRES_DB}'
+    restart: always
+    networks:
+      - backend
+    volumes:
+      - ./be/init:/docker-entrypoint-initdb.d/
+      - db:/db
+
+  backend:
+    build: ./be
+    environment:
+      POSTGRES_USER: '${POSTGRES_USER}'
+      POSTGRES_PW: '${POSTGRES_PW}'
+      POSTGRES_DB: '${POSTGRES_DB}'
+      POSTGRES_PORT: 5432
+      POSTGRES_HOST: dev-postgres
+      # POSTGRES_HOST: localhost
+      SECRET: '${SECRET}'
+      GO_ENV: dev
+      API_DOMAIN: '${API_DOMAIN}'
+      FE_URL: '${FE_URL}'
+    volumes:
+      - ./be:/usr/src/app/be
+    ports:
+      - 8080:8080
+    networks:
+      - backend
+    depends_on:
+      - dev-postgres
+
+networks:
+  frontend:
+  backend:
+
+volumes:
+  db:
