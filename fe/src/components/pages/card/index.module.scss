@@ -30,9 +30,58 @@
 }
 
 .cards > * {
-  margin: 10px auto;
+  margin: 5px auto;
 }
 
 .questionBox > * {
   margin: 10px;
+}
+
+.rowItems {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.buttonColumn {
+  padding-top: 15px;
+  padding-left: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.buttonColumn > * {
+  margin-bottom: 20px;
+}
+
+.teamMember {
+  width: 64px;
+}
+
+.confirmation {
+  width: 64px;
+}
+
+.resetImage {
+  width: 64px;
+}
+
+.modalContainer {
+  position: absolute;
+  width: 90vw;
+  height: 80vh;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  border: solid 3px gray;
+}
+
+.modalBox {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.iconImage {
+  width: 64px;
 }
