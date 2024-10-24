@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { SingleCard } from '../../atoms'
 import styles from './index.module.scss'
 import '../../atoms/cardColor.scss'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 export const Card: React.FC = () => {
   // ------------データ部分
@@ -31,7 +32,31 @@ export const Card: React.FC = () => {
     ],
   }
 
-  // --------------------
+  // ---------------------
+
+  // クエリパラメータを取得する
+  const search = useLocation().search
+  const query = new URLSearchParams(search)
+  const isOA = Number(query.get('oa'))
+  const groupID = query.get('group')
+  const questionID = query.get('question')
+  const navigate = useNavigate()
+
+  // 読み込み時の処理
+  useEffect(() => {
+    // クエリパラメータを確認
+    if (
+      isOA < 0 ||
+      1 < isOA ||
+      Number.isNaN(isOA) ||
+      groupID === null ||
+      questionID === null
+    ) {
+      navigate('/500', { state: { redirectCode: 500 } })
+    }
+
+    // TODO: グループIDからグループ名を問い合わせる
+  }, [])
 
   // カードの状態 (0は押されていない、1から5は押した順番)
   const [cardsState, setCardsState] = useState([0, 0, 0, 0, 0])
