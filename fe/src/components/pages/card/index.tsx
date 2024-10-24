@@ -42,11 +42,6 @@ export const Card: React.FC = () => {
   // グループモーダルを表示するかどうか？
   const [groupModalShow, setGroupModalShow] = useState(false)
 
-  // 発火イベント
-  const resetState = () => {
-    setCardsState([0, 0, 0, 0, 0])
-  }
-
   // 順番を選択
   const handleClick = (cardNumber: number) => {
     if (cardsState[cardNumber] !== 0 || confirmationModalShow || groupModalShow)
@@ -64,12 +59,13 @@ export const Card: React.FC = () => {
   // 確認ボタンを押したら
   const handleConfirmationButton = () => {
     const maxValue = Math.max(...cardsState)
-    if (maxValue < 5) return
+    if (maxValue < 5 || groupModalShow) return
     setConfirmationModalShow(true)
   }
 
   // グループボタンを押したら
   const handleGroupButton = () => {
+    if (confirmationModalShow) return
     setGroupModalShow(true)
   }
 
@@ -78,11 +74,22 @@ export const Card: React.FC = () => {
     setGroupModalShow(false)
   }
 
+  // 削除ボタンを押したら
+  const resetState = () => {
+    if (confirmationModalShow || groupModalShow) return
+    setCardsState([0, 0, 0, 0, 0])
+  }
+
   // モーダルのボタンを制御
   const modalButton = (okay: boolean) => {
-    if (!okay) setConfirmationModalShow(false)
+    if (!okay) {
+      setConfirmationModalShow(false)
+      return
+    }
 
-    // 投票完了画面への遷移の処理を書く
+    // TODO: ここにデータ送信処理を書く
+
+    window.location.href = '/waiting'
   }
 
   // 確認画面でカードを描画する

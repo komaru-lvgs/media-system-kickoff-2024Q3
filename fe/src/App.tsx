@@ -6,8 +6,8 @@ const App = () => {
     <BrowserRouter>
       <div className="App">
         <Routes>
-          <Route path="/waiting" element={<Waiting />} />
           <Route path="/card" element={<Card />} />
+          <Route path="/waiting" element={<Waiting />} />
           <Route path="*" element={<Page404 />} />
         </Routes>
       </div>
