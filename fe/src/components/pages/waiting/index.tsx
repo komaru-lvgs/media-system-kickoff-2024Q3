@@ -1,4 +1,3 @@
-import styles from './index.module.scss'
 import { InfoModal } from '../../atoms'
 
 export const Waiting: React.FC = () => {

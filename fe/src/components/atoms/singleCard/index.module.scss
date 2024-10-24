@@ -1,0 +1,18 @@
+.container {
+  position: relative;
+}
+
+.box {
+  width: 60vw;
+  height: calc(60vw * 9 / 16);
+  background-color: gray;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  border-radius: 10px;
+  z-index: 0;
+}
+
+.cardMessage {
+  padding: 30px;
+}
