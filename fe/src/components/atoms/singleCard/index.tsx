@@ -1,5 +1,6 @@
 import React from 'react'
-import styles from './index.module.css'
+import styles from './index.module.scss'
+import '../cardColor.scss'
 
 type SingleCardProperties = {
   color: string //'red' | 'blue' | 'green' | 'yellow' | 'purple'
@@ -16,14 +17,6 @@ export const SingleCard: React.FC<SingleCardProperties> = ({
   cardState,
   handleClick,
 }) => {
-  // 色を変換
-  let bgRGB = '#eeeeee'
-  if (color === 'red') bgRGB = '#e2767c'
-  if (color === 'blue') bgRGB = '#5bb3e7'
-  if (color === 'green') bgRGB = '#a4cb4c'
-  if (color === 'yellow') bgRGB = '#fdd15b'
-  if (color === 'purple') bgRGB = '#b885cd'
-
   return (
     <>
       <div className={styles.container}>
@@ -31,7 +24,7 @@ export const SingleCard: React.FC<SingleCardProperties> = ({
           <div
             style={{
               position: 'absolute',
-              zIndex: 10000,
+              zIndex: 10,
               top: '8%',
               right: '5%',
             }}
@@ -44,8 +37,8 @@ export const SingleCard: React.FC<SingleCardProperties> = ({
           </div>
         ) : null}
         <div
-          className={styles.box}
-          style={{ backgroundColor: bgRGB, opacity: cardState > 0 ? 0.5 : 1 }}
+          className={`${styles.box} ${color}`}
+          style={{ opacity: cardState > 0 ? 0.5 : 1 }}
           onClick={() => handleClick(cardIndex)}
         >
           <div className={styles.cardMessage}>{message}</div>
