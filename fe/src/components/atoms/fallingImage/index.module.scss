@@ -1,0 +1,16 @@
+.fallingImage {
+  position: absolute;
+  top: -40%;
+  &.index0 {
+    left: 4%;
+  }
+  &.index1 {
+    left: 29.5%;
+  }
+  &.index2 {
+    left: 55%;
+  }
+  &.index3 {
+    left: 80.5%;
+  }
+}

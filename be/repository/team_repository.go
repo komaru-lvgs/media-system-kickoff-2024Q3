@@ -13,7 +13,6 @@ type ITeamRepository interface {
 	GetTeamById(team *model.Team, id uint) error
 	CreateTeam(team *model.Team) error
 	UpdateTeamPoint(team *model.Team, id uint) error
-	UpdateTeamClearPoint(team *model.Team, id uint) error
 }
 
 type teamRepository struct {
@@ -50,18 +49,6 @@ func (teamRepository *teamRepository) CreateTeam(team *model.Team) error {
 func (teamRepository *teamRepository) UpdateTeamPoint(team *model.Team, id uint) error {
 	result := teamRepository.db.Model(team).Clauses(clause.Returning{}).Where("id=?", id).Update("point", team.Point)
 
-	if result.Error != nil {
-		return result.Error
-	}
-	if result.RowsAffected < 1 {
-		return fmt.Errorf("object does not exist")
-	}
-	return nil
-}
-
-func (teamRepository *teamRepository) UpdateTeamClearPoint(team *model.Team, id uint) error {
-	result := teamRepository.db.Model(team).Clauses(clause.Returning{}).Where("id=?", id).Updates(map[string]interface{}{"point":team.Point, "is_cleared":team.IsCleared})
-	
 	if result.Error != nil {
 		return result.Error
 	}

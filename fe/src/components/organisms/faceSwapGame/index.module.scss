@@ -1,0 +1,90 @@
+.header {
+  z-index: 120;
+  position: absolute;
+  top: 3%;
+  right: 10%;
+  transform: translate(90%);
+}
+
+.allRow {
+  z-index: 100;
+  position: absolute;
+
+  &.row0 {
+    top: -30px;
+    left: 0px;
+  }
+
+  &.row1 {
+    top: -30px;
+    left: 0px;
+  }
+
+  &.row2 {
+    top: -29px;
+    left: 0px;
+  }
+
+  &.row3 {
+    top: -29px;
+    left: 0px;
+  }
+}
+
+.rightButton {
+  z-index: 120;
+  position: absolute;
+
+  &.right_button0 {
+    top: 205px;
+    left: 1080px;
+  }
+
+  &.right_button1 {
+    top: 345px;
+    left: 1080px;
+  }
+
+  &.right_button2 {
+    top: 437px;
+    left: 1080px;
+  }
+
+  &.right_button3 {
+    top: 575px;
+    left: 1080px;
+  }
+}
+
+.leftButton {
+  z-index: 120;
+  position: absolute;
+
+  &.left_button0 {
+    top: 205px;
+    left: 378px;
+  }
+
+  &.left_button1 {
+    top: 345px;
+    left: 378px;
+  }
+
+  &.left_button2 {
+    top: 437px;
+    left: 378px;
+  }
+
+  &.left_button3 {
+    top: 575px;
+    left: 378px;
+  }
+}
+
+.submit {
+  z-index: 150;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+}

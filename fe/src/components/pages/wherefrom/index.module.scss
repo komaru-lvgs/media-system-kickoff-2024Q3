@@ -1,0 +1,110 @@
+.startback {
+  width: 100%;
+  height: 100%;
+}
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -13%;
+}
+.game {
+  text-align: center;
+  color: #1b1b53;
+  font-family: 'ヒラギノ丸ゴ Pro W3', 'ヒラギノ丸ゴ Pro',
+    'Hiragino Maru Gothic Pro', 'ヒラギノ角ゴ Pro W3',
+    'Hiragino Kaku Gothic Pro';
+  display: flex;
+  flex-flow: column;
+  padding: 40px;
+  line-height: 50px;
+  font-size: 30px;
+  position: relative;
+  background-color: #cbecfd;
+
+  .head {
+    display: flex;
+    flex-direction: row;
+    .textbox {
+      margin-right: auto;
+      .first {
+        font-size: 46px;
+      }
+      .second {
+        font-size: 38px;
+      }
+    }
+  }
+
+  .hintBox {
+    align-items: start;
+    display: flex;
+    flex-direction: row;
+    margin-left: 50px;
+    align-items: center;
+    .face {
+      height: 200px;
+      margin: 10px 0;
+    }
+    .hint {
+      justify-content: center;
+      position: relative;
+      p {
+        position: absolute;
+        top: 35px;
+        left: 55px;
+      }
+      .makimono {
+        width: 300px;
+      }
+
+      .image {
+        position: absolute;
+        margin: 70px 90px;
+        width: 120px;
+      }
+    }
+  }
+  .hintbin {
+    position: absolute;
+    width: 100px;
+    transform: translate(-420px, 210px);
+  }
+  .japanMap {
+    margin-top: -220px;
+  }
+}
+
+.end {
+  position: absolute;
+  z-index: 5;
+  right: 0;
+  left: 0;
+  display: flex;
+  flex-flow: column;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+
+  .makimono {
+    height: 765px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .clear {
+    margin: -750px auto 0;
+    width: 330px;
+  }
+}
+.failure {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  top: 1%;
+  left: 1%;
+  z-index: 50;
+}

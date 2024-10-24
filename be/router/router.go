@@ -20,7 +20,7 @@ func NewRouter(
 ) *echo.Echo {
 	e := echo.New()
 	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
-		AllowOrigins: []string{os.Getenv("FE_URL"), os.Getenv("FE_URL")},
+		AllowOrigins: []string{"http://localhost:3000", os.Getenv("FE_URL")},
 		AllowHeaders: []string{echo.HeaderOrigin, echo.HeaderContentType, echo.HeaderAccept,
 			echo.HeaderAccessControlAllowHeaders, echo.HeaderXCSRFToken},
 		AllowMethods:     []string{"GET", "PUT", "POST", "DELETE"},
@@ -59,7 +59,6 @@ func NewRouter(
 	register.GET("/team", teamController.GetTeam)
 	e.GET("/teams", teamController.GetSortedTeams)
 	register.PUT("/point", teamController.UpdateTeamPoint)
-	register.PUT("/clear", teamController.UpdateTeamClearPoint)
 	register.POST("/played-game/:gameId", playedGameController.CreatePlayedGame)
 	e.GET("/game", gameController.GetGameByPassword)
 	register.GET("/check", playedGameController.CheckIsPlayedGame)

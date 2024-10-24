@@ -1,0 +1,663 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* CSSリセット */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+} /* HTML5 display-role reset for older browsers  */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+img {
+  vertical-align: bottom;
+}
+button:hover img {
+  opacity: 0.7;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity = 60);
+  filter: alpha(opacity = 60);
+  transition: all 0.4s;
+}
+button {
+  text-decoration: none;
+  color: #435ea9;
+}
+button:hover {
+  text-decoration: none;
+  color: #0e2d96;
+  transition: 0.3s all;
+}
+.clearfix:after {
+  content: '.';
+  display: block;
+  clear: both;
+  height: 0;
+  visibility: hidden;
+}
+
+/******* 地図成形 *******/
+#japan-map div div.area div {
+  border: 1px #ffffff solid;
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  display: -webkit-flex;
+  align-items: center; /* 縦方向中央揃え */
+  -webkit-align-items: center; /* 縦方向中央揃え（Safari用） */
+  justify-content: center; /* 横方向中央揃え */
+  -webkit-justify-content: center; /* 横方向中央揃え（Safari用） */
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  position: absolute;
+  box-sizing: border-box;
+  transition: 0.2s;
+}
+#japan-map div div.area div:hover {
+  opacity: 0.5;
+  transition: 0.2s;
+}
+
+#japan-map {
+  display: block;
+  width: calc(1.3 * 777px);
+  height: calc(1.3 * 482px);
+  background-color: none;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+#japan-map p.area-title {
+  display: none;
+}
+
+/* 北海道・東北 */
+
+#hokkaido-touhoku {
+  width: calc(1.3 * 136px);
+  display: block;
+  height: calc(1.3 * 265px);
+  position: absolute;
+  left: calc(1.3 * 638px);
+}
+#hokkaido-touhoku div.area div {
+  background-color: #7478c2;
+  color: #ffffff;
+}
+
+#hokkaido {
+  width: calc(1.3 * 133px);
+  height: calc(1.3 * 70px);
+}
+#aomori {
+  width: calc(1.3 * 93px);
+  height: calc(1.3 * 43px);
+  left: calc(1.3 * 21px);
+  top: calc(1.3 * 96px);
+}
+#akita {
+  width: calc(1.3 * 67px);
+  height: calc(1.3 * 42px);
+  left: calc(1.3 * 3px);
+  top: calc(1.3 * 139px);
+}
+#iwate {
+  width: calc(1.3 * 67px);
+  height: calc(1.3 * 42px);
+  left: calc(1.3 * 70px);
+  top: calc(1.3 * 139px);
+}
+#yamagata {
+  width: calc(1.3 * 67px);
+  height: calc(1.3 * 42px);
+  top: calc(1.3 * 181px);
+  left: calc(1.3 * 3px);
+}
+#miyagi {
+  width: calc(1.3 * 67px);
+  height: calc(1.3 * 42px);
+  top: calc(1.3 * 181px);
+  left: calc(1.3 * 70px);
+}
+#fukushima {
+  width: calc(1.3 * 67px);
+  height: calc(1.3 * 42px);
+  top: calc(1.3 * 223px);
+  left: calc(1.3 * 70px);
+}
+
+/* 関東 */
+
+#kantou {
+  width: calc(1.3 * 158px);
+  display: block;
+  height: calc(1.3 * 174px);
+  position: absolute;
+  top: calc(1.3 * 265px);
+  left: calc(1.3 * 623px);
+  z-index: 2;
+}
+#kantou div.area div {
+  background-color: #31beca;
+  color: #ffffff;
+}
+#ibaraki {
+  width: calc(1.3 * 52px);
+  height: calc(1.3 * 85px);
+  top: calc(1.3 * 0px);
+  left: calc(1.3 * 100px);
+}
+#tochigi {
+  width: calc(1.3 * 50px);
+  height: calc(1.3 * 42px);
+  top: calc(1.3 * 0px);
+  left: calc(1.3 * 50px);
+}
+#gunma {
+  width: calc(1.3 * 50px);
+  height: calc(1.3 * 42px);
+  top: calc(1.3 * 0px);
+  left: calc(1.3 * 0px);
+}
+#saitama {
+  width: calc(1.3 * 100px);
+  height: calc(1.3 * 43px);
+  top: calc(1.3 * 42px);
+  left: calc(1.3 * 0px);
+}
+#chiba {
+  width: calc(1.3 * 52px);
+  height: calc(1.3 * 84px);
+  top: calc(1.3 * 85px);
+  left: calc(1.3 * 100px);
+}
+#tokyo {
+  width: calc(1.3 * 100px);
+  height: calc(1.3 * 42px);
+  top: calc(1.3 * 85px);
+  left: calc(1.3 * 0px);
+}
+#kanagawa {
+  width: calc(1.3 * 67px);
+  height: calc(1.3 * 42px);
+  top: calc(1.3 * 127px);
+  left: calc(1.3 * 0px);
+}
+
+/* 中部 */
+
+#tyubu {
+  width: calc(1.3 * 270px);
+  height: calc(1.3 * 211px);
+  position: absolute;
+  left: calc(1.3 * 438px);
+  top: calc(1.3 * 223px);
+}
+#tyubu div.area div {
+  background-color: #4ab969;
+  color: #ffffff;
+}
+
+#nigata {
+  width: calc(1.3 * 85px);
+  height: calc(1.3 * 42px);
+  left: calc(1.3 * 185px);
+}
+#toyama {
+  width: calc(1.3 * 67px);
+  height: calc(1.3 * 42px);
+  left: calc(1.3 * 118px);
+}
+#ishikawa {
+  width: calc(1.3 * 50px);
+  height: calc(1.3 * 57px);
+  left: calc(1.3 * 68px);
+}
+#fukui {
+  width: calc(1.3 * 68px);
+  height: calc(1.3 * 42px);
+  left: calc(1.3 * 0px);
+  z-index: 2;
+}
+#nagano {
+  width: calc(1.3 * 67px);
+  height: calc(1.3 * 85px);
+  left: calc(1.3 * 118px);
+  top: calc(1.3 * 42px);
+}
+#yamanashi {
+  width: calc(1.3 * 67px);
+  height: calc(1.3 * 42px);
+  left: calc(1.3 * 118px);
+  top: calc(1.3 * 127px);
+}
+#gifu {
+  width: calc(1.3 * 50px);
+  height: calc(1.3 * 55px);
+  left: calc(1.3 * 68px);
+  top: calc(1.3 * 57px);
+}
+#shizuoka {
+  width: calc(1.3 * 67px);
+  height: calc(1.3 * 42px);
+  left: calc(1.3 * 118px);
+  top: calc(1.3 * 169px);
+}
+#aichi {
+  width: calc(1.3 * 50px);
+  height: calc(1.3 * 57px);
+  top: calc(1.3 * 112px);
+  left: calc(1.3 * 68px);
+}
+
+/* 近畿 */
+
+#kinki {
+  width: calc(1.3 * 186px);
+  height: calc(1.3 * 211px);
+  position: absolute;
+  left: calc(1.3 * 320px);
+  top: calc(1.3 * 223px);
+}
+#kinki div.area div {
+  background-color: #b0b72f;
+  color: #ffffff;
+}
+
+#kyoto {
+  width: calc(1.3 * 67px);
+  height: calc(1.3 * 84px);
+  left: calc(1.3 * 51px);
+}
+#shiga {
+  width: calc(1.3 * 68px);
+  height: calc(1.3 * 42px);
+  top: calc(1.3 * 42px);
+  left: calc(1.3 * 118px);
+}
+#osaka {
+  width: calc(1.3 * 67px);
+  height: calc(1.3 * 85px);
+  top: calc(1.3 * 84px);
+  left: calc(1.3 * 51px);
+}
+#nara {
+  width: calc(1.3 * 34px);
+  height: calc(1.3 * 85px);
+  top: calc(1.3 * 84px);
+  left: calc(1.3 * 118px);
+}
+#mie {
+  width: calc(1.3 * 34px);
+  height: calc(1.3 * 85px);
+  top: calc(1.3 * 84px);
+  left: calc(1.3 * 152px);
+}
+#wakayama {
+  width: calc(1.3 * 113px);
+  height: calc(1.3 * 42px);
+  top: calc(1.3 * 169px);
+  left: calc(1.3 * 61px);
+}
+#hyougo {
+  width: calc(1.3 * 51px);
+  height: calc(1.3 * 98px);
+  left: calc(1.3 * 0px);
+}
+
+/* 中国 */
+
+#tyugoku {
+  width: calc(1.3 * 151px);
+  height: calc(1.3 * 98px);
+  position: absolute;
+  left: calc(1.3 * 169px);
+  top: calc(1.3 * 223px);
+}
+#tyugoku div.area div {
+  background-color: #ef9f27;
+  color: #ffffff;
+}
+#tottori {
+  width: calc(1.3 * 50px);
+  height: calc(1.3 * 49px);
+  left: calc(1.3 * 101px);
+}
+#okayama {
+  width: calc(1.3 * 50px);
+  height: calc(1.3 * 49px);
+  top: calc(1.3 * 49px);
+  left: calc(1.3 * 101px);
+}
+#shimane {
+  width: calc(1.3 * 51px);
+  height: calc(1.3 * 49px);
+  left: calc(1.3 * 50px);
+}
+#hiroshima {
+  width: calc(1.3 * 51px);
+  height: calc(1.3 * 49px);
+  top: calc(1.3 * 49px);
+  left: calc(1.3 * 50px);
+}
+#yamaguchi {
+  width: calc(1.3 * 50px);
+  height: calc(1.3 * 98px);
+  left: calc(1.3 * 0px);
+}
+
+/* 四国 */
+
+#shikoku {
+  width: calc(1.3 * 184px);
+  height: calc(1.3 * 84px);
+  position: absolute;
+  left: calc(1.3 * 169px);
+  top: calc(1.3 * 350px);
+}
+#shikoku div.area div {
+  background-color: #d08f68;
+  color: #ffffff;
+}
+#kagawa {
+  width: calc(1.3 * 92px);
+  height: calc(1.3 * 42px);
+  right: 0px;
+}
+#ehime {
+  width: calc(1.3 * 92px);
+  height: calc(1.3 * 42px);
+  left: calc(1.3 * 0px);
+}
+#tokushima {
+  width: calc(1.3 * 92px);
+  height: calc(1.3 * 42px);
+  right: 0px;
+  top: calc(1.3 * 42px);
+}
+#kouchi {
+  width: calc(1.3 * 92px);
+  height: calc(1.3 * 42px);
+  left: calc(1.3 * 0px);
+  top: calc(1.3 * 42px);
+}
+
+/* 九州・沖縄 */
+
+#kyusyu {
+  width: calc(1.3 * 152px);
+  height: calc(1.3 * 247px);
+  position: absolute;
+  left: calc(1.3 * 0px);
+  top: calc(1.3 * 235px);
+}
+#kyusyu div.area div {
+  background-color: #ff7575;
+  color: #ffffff;
+}
+#fukuoka {
+  width: calc(1.3 * 50px);
+  height: calc(1.3 * 50px);
+  left: calc(1.3 * 101px);
+  top: calc(1.3 * 0px);
+}
+#saga {
+  width: calc(1.3 * 50px);
+  height: calc(1.3 * 50px);
+  left: calc(1.3 * 51px);
+  top: calc(1.3 * 0px);
+}
+#nagasaki {
+  width: calc(1.3 * 50px);
+  height: calc(1.3 * 50px);
+  left: calc(1.3 * 1px);
+  top: calc(1.3 * 0px);
+}
+#oita {
+  width: calc(1.3 * 50px);
+  height: calc(1.3 * 50px);
+  left: calc(1.3 * 101px);
+  top: calc(1.3 * 50px);
+}
+#kumamoto {
+  width: calc(1.3 * 50px);
+  height: calc(1.3 * 100px);
+  left: calc(1.3 * 51px);
+  top: calc(1.3 * 50px);
+}
+#miyazaki {
+  width: calc(1.3 * 50px);
+  height: calc(1.3 * 50px);
+  left: calc(1.3 * 101px);
+  top: calc(1.3 * 100px);
+}
+#kagoshima {
+  width: calc(1.3 * 68px);
+  height: calc(1.3 * 49px);
+  left: calc(1.3 * 83px);
+  top: calc(1.3 * 150px);
+}
+#okinawa {
+  width: calc(1.3 * 50px);
+  height: calc(1.3 * 50px);
+  left: calc(1.3 * 1px);
+  top: calc(1.3 * 197px);
+}
+
+/****************************************
+	レスポンシブ
+
+****************************************/
+@media screen and (max-width: calc(1.3 *  776px)) {
+  #japan-map {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  #japan-map p.area-title {
+    display: inline-block;
+    width: 100%;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 1.3em;
+    margin-bottom: 1em;
+    color: #000000;
+  }
+  #hokkaido-touhoku,
+  #kantou,
+  #tyubu,
+  #kinki,
+  #tyugoku,
+  #shikoku,
+  #kyusyu {
+    display: block;
+    position: static;
+    margin: 0 1em 0 1em;
+  }
+  #japan-map div div.area {
+    display: block;
+    position: relative;
+  }
+
+  #hokkaido-touhoku {
+    height: calc(1.3 * calc(265px) + 4.5em);
+  }
+  #kantou {
+    height: calc(1.3 * calc(174px) + 4.5em);
+  }
+  #tyubu {
+    height: calc(1.3 * calc(211px) + 4.5em);
+  }
+  #kinki {
+    height: calc(1.3 * calc(211px) + 4.5em);
+  }
+  #tyugoku {
+    height: calc(1.3 * calc(98px) + 4.5em);
+  }
+  #shikoku {
+    height: calc(1.3 * calc(84px) + 4.5em);
+  }
+
+  #kyusyu {
+    height: calc(1.3 * calc(247px) + 4.5em);
+  }
+} /* レスポンシブ max-776px */
+
+@media screen and (max-width: calc(1.3 *  500px)) {
+  #japan-map {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  #hokkaido-touhoku,
+  #kantou,
+  #tyubu,
+  #kinki,
+  #tyugoku,
+  #shikoku,
+  #kyusyu {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    position: static;
+    margin-left: calc(1.3 * 0px);
+    margin-right: 0px;
+  }
+  #japan-map div div.area {
+    font-size: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  #japan-map div div.area a {
+    height: auto;
+    width: 25%;
+  }
+  #japan-map div div.area div {
+    display: block;
+    border-radius: 0px;
+    position: static;
+    height: auto;
+    font-size: 16px;
+    width: 100%;
+    padding: 0.5em 0.3em 0.5em 0.3em;
+  }
+} /* レスポンシブ max-500px */

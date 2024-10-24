@@ -1,0 +1,69 @@
+.background {
+  width: 100%;
+  height: 100%;
+}
+.main {
+  text-align: center;
+  z-index: 2;
+  position: absolute;
+  width: 55%;
+  left: 50%;
+  transform: translate(-48%, 0);
+  top: 72%;
+  // background-color: red;
+}
+
+.parent {
+  position: relative;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+.namePoint {
+  display: flex;
+  gap: 30px;
+}
+
+.nameInput {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.department {
+  background-color: #b2dff7;
+  width: 860px;
+  height: 98px;
+  border: none;
+  border-radius: 50px;
+  font-size: 24px;
+  padding-left: 30px;
+  padding-right: 30px;
+  appearance: none;
+}
+
+.formInput {
+  background-color: #b2dff7;
+  color: black;
+  width: 400px;
+  height: 70px;
+  border: none;
+  border-radius: 34px;
+  font-size: 24px;
+  padding-left: 30px;
+  font-weight: bold;
+}
+
+.startButton {
+  width: 520px;
+  height: 98px;
+  border-radius: 49px;
+  background-color: #a0d0ea;
+  font-size: 50px;
+  border: none;
+}

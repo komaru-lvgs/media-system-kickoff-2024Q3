@@ -1,0 +1,74 @@
+.startBack {
+  width: 100%;
+  height: 100%;
+}
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -9%;
+  transform: translate(-2%);
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+  background: #fffaf0;
+  .header {
+    position: relative;
+    z-index: 20;
+    height: 40%;
+    transform: translate(88%);
+  }
+  .cardbox {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    place-content: center;
+    place-items: center;
+    gap: 10px;
+
+    .photo {
+      height: 300px;
+      margin: 1px 1px;
+    }
+  }
+
+  .loopWrap {
+    z-index: 10;
+    display: flex;
+    width: 100vw;
+    overflow: hidden;
+    float: left;
+    position: absolute;
+    top: 0%;
+  }
+
+  .nonakasan {
+    width: 221px;
+    height: 145px;
+  }
+
+  @keyframes loop {
+    0% {
+      transform: translateX(750%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  .loopWrap img {
+    animation: loop 25s linear infinite;
+    animation-direction: reverse;
+  }
+}
+
+.correct {
+  position: absolute;
+  top: 36%;
+  left: 21%;
+  z-index: 30;
+}

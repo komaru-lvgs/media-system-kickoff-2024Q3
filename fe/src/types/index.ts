@@ -53,7 +53,6 @@ export type FlashQuestion = {
   choices: { id: string; label: string }[]
   answer: string
   incorrectImagePath: string
-  correctImagePath: string
 }
 
 export type MemberFromItem = {

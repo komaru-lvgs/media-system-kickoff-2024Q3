@@ -1,4 +1,6 @@
 import React from 'react'
+import { prefectures } from '../../../libs/prefecture'
+import { Prefecture } from '../../atoms'
 
 type AreaProperties = {
   id: string
@@ -17,7 +19,14 @@ export const Area: React.FC<AreaProperties> = ({
     <div id={id} className="clearfix">
       <p className="area-title">{name}</p>
       <div className="area">
-        aaa
+        {areaPrefectures.map((id) => (
+          <Prefecture
+            id={id}
+            key={id}
+            name={prefectures[id]}
+            handleClick={() => handleClick(prefectures[id])}
+          />
+        ))}
       </div>
     </div>
   )

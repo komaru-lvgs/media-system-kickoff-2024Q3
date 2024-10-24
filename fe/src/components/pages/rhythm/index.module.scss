@@ -1,0 +1,101 @@
+.back {
+  width: 100%;
+  height: 100%;
+}
+
+.gameContainer {
+  overflow: hidden;
+  position: relative;
+}
+
+.container {
+  position: absolute;
+  top: 55%;
+  left: 33.5%;
+}
+
+.container1 {
+  width: 10%;
+  height: 20%;
+  position: absolute;
+  top: 79%;
+  left: 7.5%;
+}
+
+.container2 {
+  width: 10%;
+  height: 20%;
+  position: absolute;
+  top: 79%;
+  left: 33%;
+}
+
+.container3 {
+  width: 10%;
+  height: 20%;
+  position: absolute;
+  top: 79%;
+  left: 58.5%;
+}
+
+.container4 {
+  width: 10%;
+  height: 20%;
+  position: absolute;
+  top: 79%;
+  left: 84%;
+}
+
+.nice1 {
+  position: absolute;
+  top: 60%;
+  left: 4%;
+}
+
+.miss1 {
+  position: absolute;
+  top: 60%;
+  left: 4%;
+}
+
+.nice2 {
+  position: absolute;
+  top: 60%;
+  left: 29.5%;
+}
+
+.miss2 {
+  position: absolute;
+  top: 60%;
+  left: 29.5%;
+}
+
+.nice3 {
+  position: absolute;
+  top: 60%;
+  left: 55%;
+}
+
+.miss3 {
+  position: absolute;
+  top: 60%;
+  left: 55%;
+}
+
+.nice4 {
+  position: absolute;
+  top: 60%;
+  left: 79%;
+}
+
+.miss4 {
+  position: absolute;
+  top: 60%;
+  left: 79%;
+}
+
+.timer {
+  position: absolute;
+  top: 5%;
+  right: 3%;
+}

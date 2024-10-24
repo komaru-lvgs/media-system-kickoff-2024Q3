@@ -17,7 +17,6 @@ type ITeamController interface {
 	GetTeam(c echo.Context) error
 	GetSortedTeams(c echo.Context) error
 	UpdateTeamPoint(c echo.Context) error
-	UpdateTeamClearPoint(c echo.Context) error
 }
 
 type teamController struct {
@@ -98,34 +97,6 @@ func (teamController *teamController) UpdateTeamPoint(c echo.Context) error {
 
 	team.Point += currentTeam.Point
 	taskRes, err := teamController.teamUsecase.UpdateTeamPoint(team, uint(teamId.(float64)))
-	if err != nil {
-		return c.JSON(http.StatusInternalServerError, err.Error())
-	}
-	return c.JSON(http.StatusOK, taskRes)
-}
-
-func (teamController *teamController) UpdateTeamClearPoint(c echo.Context) error {
-	user := c.Get("user").(*jwt.Token)
-	claims := user.Claims.(jwt.MapClaims)
-	teamId := claims["team_id"]
-
-	team := model.Team{}
-	if err := c.Bind(&team); err != nil {
-		return c.JSON(http.StatusBadRequest, err.Error())
-	}
-
-	currentTeam, err := teamController.teamUsecase.GetTeamById(uint(teamId.(float64)))
-	if err != nil {
-		return c.JSON(http.StatusInternalServerError, err.Error())
-	}
-
-	if currentTeam.IsCleared {
-		return c.JSON(http.StatusOK, currentTeam)
-	}
-	team.IsCleared = true
-	team.Point += currentTeam.Point
-
-	taskRes, err := teamController.teamUsecase.UpdateTeamClearPoint(team, uint(teamId.(float64)))
 	if err != nil {
 		return c.JSON(http.StatusInternalServerError, err.Error())
 	}
