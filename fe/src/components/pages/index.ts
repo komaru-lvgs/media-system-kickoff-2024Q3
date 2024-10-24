@@ -1,2 +1,2 @@
-export * from './clear'
+export * from './waiting'
 export * from './page404'
