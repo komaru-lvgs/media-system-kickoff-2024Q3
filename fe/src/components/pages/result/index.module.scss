@@ -1,0 +1,153 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  position: inherit;
+}
+
+.question {
+  margin: 0;
+  height: 60px;
+  border-bottom: solid 2px #eeeeee;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.questionBox {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  background-color: #f9f9f9;
+  border: solid 3px #cccccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  font-size: large;
+}
+
+.questionTitle {
+  width: 60px;
+}
+
+.questionMessage {
+  font-weight: bold;
+}
+
+.modalContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.modalContainer > * {
+  text-align: center;
+}
+
+.modalIcon {
+  margin-top: 10px;
+}
+
+.answerMessage {
+  font-size: x-large;
+  text-align: left;
+  padding-left: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.iconImage {
+  width: 64px;
+}
+
+.modalCards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.confirmationCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60vw;
+  height: 20vw;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.highOrDown {
+  width: 20px;
+  height: 100%;
+  margin-right: 10px;
+}
+
+.hdColorBar {
+  width: 100%;
+  height: 120vw;
+}
+
+.hdText {
+  padding: 0;
+  margin: 0;
+}
+
+.modalBody {
+  display: flex;
+  margin: 10px auto;
+  align-items: center;
+}
+
+.modalFooter {
+  justify-content: center;
+}
+
+.modalButton {
+  width: 40vw;
+  margin: 10px;
+}
+
+.singleQuestionContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.singleCheck {
+  margin-left: 10px;
+}
+
+.correctImage {
+  width: 50px;
+}
+
+.missImage {
+  width: 50px;
+}
+
+.ranking {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  font-size: x-large;
+  margin-bottom: 20px;
+}
+
+.currentRanking {
+  font-size: 2em;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.points {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  font-size: xx-large;
+  margin-bottom: 10px;
+}
+
+.currentPoints {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-right: 5px;
+}
