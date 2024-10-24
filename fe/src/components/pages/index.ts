@@ -1,3 +1,4 @@
 export * from './card'
-export * from './waiting'
 export * from './errorPage'
+export * from './result'
+export * from './waiting'
