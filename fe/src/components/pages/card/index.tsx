@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { SingleCard } from '../../atoms'
 import styles from './index.module.scss'
 import '../../atoms/cardColor.scss'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 export const Card: React.FC = () => {
   // ------------データ部分
@@ -31,7 +32,31 @@ export const Card: React.FC = () => {
     ],
   }
 
-  // --------------------
+  // ---------------------
+
+  // クエリパラメータを取得する
+  const search = useLocation().search
+  const query = new URLSearchParams(search)
+  const isOA = Number(query.get('oa'))
+  const groupID = query.get('group')
+  const questionID = query.get('question')
+  const navigate = useNavigate()
+
+  // 読み込み時の処理
+  useEffect(() => {
+    // クエリパラメータを確認
+    if (
+      isOA < 0 ||
+      1 < isOA ||
+      Number.isNaN(isOA) ||
+      groupID === null ||
+      questionID === null
+    ) {
+      navigate('/500', { state: { redirectCode: 500 } })
+    }
+
+    // TODO: グループIDからグループ名を問い合わせる
+  }, [])
 
   // カードの状態 (0は押されていない、1から5は押した順番)
   const [cardsState, setCardsState] = useState([0, 0, 0, 0, 0])
@@ -41,11 +66,6 @@ export const Card: React.FC = () => {
 
   // グループモーダルを表示するかどうか？
   const [groupModalShow, setGroupModalShow] = useState(false)
-
-  // 発火イベント
-  const resetState = () => {
-    setCardsState([0, 0, 0, 0, 0])
-  }
 
   // 順番を選択
   const handleClick = (cardNumber: number) => {
@@ -64,12 +84,13 @@ export const Card: React.FC = () => {
   // 確認ボタンを押したら
   const handleConfirmationButton = () => {
     const maxValue = Math.max(...cardsState)
-    if (maxValue < 5) return
+    if (maxValue < 5 || groupModalShow) return
     setConfirmationModalShow(true)
   }
 
   // グループボタンを押したら
   const handleGroupButton = () => {
+    if (confirmationModalShow) return
     setGroupModalShow(true)
   }
 
@@ -78,11 +99,22 @@ export const Card: React.FC = () => {
     setGroupModalShow(false)
   }
 
+  // 削除ボタンを押したら
+  const resetState = () => {
+    if (confirmationModalShow || groupModalShow) return
+    setCardsState([0, 0, 0, 0, 0])
+  }
+
   // モーダルのボタンを制御
   const modalButton = (okay: boolean) => {
-    if (!okay) setConfirmationModalShow(false)
+    if (!okay) {
+      setConfirmationModalShow(false)
+      return
+    }
 
-    // 投票完了画面への遷移の処理を書く
+    // TODO: ここにデータ送信処理を書く
+
+    window.location.href = '/waiting'
   }
 
   // 確認画面でカードを描画する
