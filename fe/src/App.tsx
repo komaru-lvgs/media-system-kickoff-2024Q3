@@ -2,7 +2,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Waiting, Card, Page404 } from './components'
 
 const App = () => {
-
   return (
     <BrowserRouter>
       <div className="App">

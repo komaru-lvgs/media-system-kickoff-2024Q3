@@ -1,14 +1,14 @@
 version: '3.8'
 services:
-  frontend:
-    build: ./fe
-    environment:
-      REACT_APP_API_URL: '${BE_URL}'
-    volumes:
-      - ./fe:/usr/src/app/fe
-    command: npm start
-    ports:
-      - '3000:3000'
+  # frontend:
+  #   build: ./fe
+  #   environment:
+  #     REACT_APP_API_URL: '${BE_URL}'
+  #   volumes:
+  #     - ./fe:/usr/src/app/fe
+  #   command: npm start
+  #   ports:
+  #     - '3000:3000'
 
   dev-postgres:
     image: postgres:15.1-alpine
@@ -48,7 +48,7 @@ services:
       - dev-postgres
 
 networks:
-  frontend:
+  # frontend:
   backend:
 
 volumes:
