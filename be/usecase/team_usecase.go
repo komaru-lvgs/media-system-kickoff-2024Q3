@@ -15,7 +15,6 @@ type ITeamUsecase interface {
 	GetTeamById(id uint) (model.TeamResponse, error)
 	GetSortedTeams() ([]model.TeamResponse, error)
 	UpdateTeamPoint(team model.Team, id uint) (model.TeamResponse, error)
-	UpdateTeamClearPoint(team model.Team, id uint) (model.TeamResponse, error)
 }
 
 type teamUsecase struct {
@@ -83,7 +82,6 @@ func (teamUsecase *teamUsecase) GetTeamById(id uint) (model.TeamResponse, error)
 		Department: newTeam.Department,
 		Point:      newTeam.Point,
 		Members:    newTeam.Members,
-		IsCleared:  newTeam.IsCleared,
 	}
 	return responseTeam, nil
 }
@@ -91,19 +89,6 @@ func (teamUsecase *teamUsecase) GetTeamById(id uint) (model.TeamResponse, error)
 // ポイントの更新
 func (teamUsecase *teamUsecase) UpdateTeamPoint(team model.Team, id uint) (model.TeamResponse, error) {
 	if err := teamUsecase.teamRepository.UpdateTeamPoint(&team, id); err != nil {
-		return model.TeamResponse{}, err
-	}
-
-	responseTeam := model.TeamResponse{
-		ID:         team.ID,
-		Department: team.Department,
-		Point:      team.Point,
-	}
-	return responseTeam, nil
-}
-
-func (teamUsecase *teamUsecase) UpdateTeamClearPoint(team model.Team, id uint) (model.TeamResponse, error) {
-	if err := teamUsecase.teamRepository.UpdateTeamClearPoint(&team, id); err != nil {
 		return model.TeamResponse{}, err
 	}
 

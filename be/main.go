@@ -7,18 +7,42 @@ import (
 	"nakapro/router"
 	"nakapro/usecase"
 	"nakapro/validator"
+		"fmt"
+		"nakapro/model"
 )
 
 func main() {
-	db := db.NewDB()
+	dbConn := db.NewDB()
+	defer fmt.Println("Successfully Migrated")
+	defer db.CloseDB(dbConn)
+	dbConn.AutoMigrate(&model.User{}, &model.Task{}, &model.Game{}, &model.Member{}, &model.PlayedGame{}, &model.Team{})
+
+	// 初期データの作成
+	games := []model.Game{
+		{InitialPoint: 70, Url: "/twister", Password: "ツイスター", ImagePath: "images/puzzle1.png", Address: 1},
+		{InitialPoint: 0, Url: "/mistakes", Password: "間違え探し", ImagePath: "images/puzzle2.png", Address: 2},
+		{InitialPoint: 0, Url: "/flash-shinsotu", Password: "新卒フラッシュ", ImagePath: "images/puzzle3.png", Address: 3},
+		{InitialPoint: 0, Url: "/face-swap", Password: "顔入れ替え", ImagePath: "images/puzzle4.png", Address: 4},
+		{InitialPoint: 0, Url: "/nervous-breakdown", Password: "神経衰弱", ImagePath: "images/puzzle5.png", Address: 5},
+		{InitialPoint: 0, Url: "/rhythm", Password: "リズムゲーム", ImagePath: "images/puzzle6.png", Address: 6},
+		{InitialPoint: 0, Url: "/wherefrom", Password: "出身地クイズ", ImagePath: "images/puzzle7.png", Address: 7},
+		{InitialPoint: 0, Url: "/mogura", Password: "新卒叩き", ImagePath: "images/puzzle8.png", Address: 8},
+		{InitialPoint: 0, Url: "/tyokusen", Password: "直線繋ぎ", ImagePath: "images/puzzle9.png", Address: 9},
+	}
+
+	// データベースに挿入
+	for _, game := range games {
+		dbConn.Create(&game)
+	}
+
 	userValidator := validator.NewUserValidator()
 	taskValidator := validator.NewTaskValidator()
-	userRepository := repository.NewUserRepository(db)
-	taskRepository := repository.NewTaskRepository(db)
-	teamRepository := repository.NewTeamRepository(db)
-	memberRepository := repository.NewMemberRepository(db)
-	gameRepository := repository.NewGameRepository(db)
-	playedGameRepository := repository.NewPlayedGameRepository(db)
+	userRepository := repository.NewUserRepository(dbConn)
+	taskRepository := repository.NewTaskRepository(dbConn)
+	teamRepository := repository.NewTeamRepository(dbConn)
+	memberRepository := repository.NewMemberRepository(dbConn)
+	gameRepository := repository.NewGameRepository(dbConn)
+	playedGameRepository := repository.NewPlayedGameRepository(dbConn)
 	userUsecase := usecase.NewUserUsecase(userRepository, userValidator)
 	taskUsecase := usecase.NewTaskUsecase(taskRepository, taskValidator)
 	teamUsecase := usecase.NewTeamUsecase(teamRepository)

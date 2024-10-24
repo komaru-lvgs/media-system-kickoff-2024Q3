@@ -1,0 +1,260 @@
+.mainView {
+  text-align: center;
+  background-color: #b2dff7;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.container1 {
+  position: relative;
+  width: 68%;
+  height: 68vh;
+  margin: 0 auto; 
+}
+
+.curve1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 18.301pt;
+}
+
+.container2 {
+  position: relative;
+  width: 28%;
+  height: 8.5vh;
+  margin: 0 auto; 
+}
+
+.curve2 {
+  position: absolute;
+  top: -100%;
+  right: 120%;
+  width: 100%;
+  height: 140%;
+  border-radius: 18.301pt;
+  background-color: #afd69b;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 90%;
+  color: #1B1B53;
+  font-weight: bold;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  text-align: left;
+  box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.awa1{
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: -18%;
+  left: -65%;
+}
+
+.shinsotu{
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: -98%;
+  left: 15%; 
+}
+
+.chinanago1{
+  z-index: 1;
+  width: 90%;
+  height: 120%;
+  position: absolute;
+  bottom: -60%;
+  left: -57.5%;
+}
+
+.rakko1{
+  z-index: 1;
+  width: 90%;
+  height: 90%;
+  position: absolute;
+  bottom: -45%;
+  left: -5%;
+}
+
+.iruka1{
+  z-index: 1;
+  width: 90%;
+  height: 90%;
+  position: absolute;
+  bottom: 2%;
+  left: -50%;
+}
+
+.ika1{
+  z-index: 1;
+  width: 15%;
+  height: 30%;
+  position: absolute;
+  bottom: 73%;
+  left: -20%;
+}
+
+.kurage1{
+  z-index: 1;
+  width: 60%;
+  height: 60%;
+  position: absolute;
+  bottom: 50%;
+  left: -47%;
+}
+
+.kaigara1{
+  z-index: 1;
+  width: 85%;
+  height: 85%;
+  position: absolute;
+  bottom: -3%;
+  left: -60%;
+}
+
+.kawauso1{
+  z-index: 1;
+  width: 110%;
+  height: 110%;
+  position: absolute;
+  top: -63%;
+  left: -19%;
+}
+
+.kani1{
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: -53%;
+  left: -33%;
+}
+
+.hitode1{
+  z-index: 1;
+  width: 100%;
+  height: 120%;
+  position: absolute;
+  bottom: -75%;
+  left: -27%;
+}
+
+.awa2{
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: -18%;
+  right: -65%;
+  transform: scale(-1,1);
+}
+
+.chinanago2{
+  z-index: 1;
+  width: 90%;
+  height: 120%;
+  position: absolute;
+  bottom: -60%;
+  right: -57.5%;
+  transform: scale(-1,1);
+}
+
+.rakko2{
+  z-index: 1;
+  width: 90%;
+  height: 90%;
+  position: absolute;
+  bottom: -45%;
+  right: -5%;
+  transform: scale(-1,1);
+}
+
+.iruka2{
+  z-index: 1;
+  width: 90%;
+  height: 90%;
+  position: absolute;
+  bottom: 12%;
+  right: -50%;
+  transform: scale(-1,1);
+}
+
+.ika2{
+  z-index: 1;
+  width: 15%;
+  height: 30%;
+  position: absolute;
+  bottom: 73%;
+  right: -20%;
+  transform: scale(-1,1);
+}
+
+.kurage2{
+  z-index: 1;
+  width: 60%;
+  height: 60%;
+  position: absolute;
+  bottom: 50%;
+  right: -47%;
+  transform: scale(-1,1);
+}
+
+.kaigara2{
+  z-index: 1;
+  width: 85%;
+  height: 85%;
+  position: absolute;
+  bottom: -3%;
+  right: -60%;
+  transform: scale(-1,1);
+}
+
+.kawauso2{
+  z-index: 1;
+  width: 110%;
+  height: 110%;
+  position: absolute;
+  top: -63%;
+  right: -19%;
+  transform: scale(-1,1);
+}
+
+.kani2{
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: -53%;
+  right: -33%;
+  transform: scale(-1,1);
+}
+
+.hitode2{
+  z-index: 1;
+  width: 100%;
+  height: 120%;
+  position: absolute;
+  bottom: -75%;
+  right: -27%;
+  transform: scale(-1,1);
+}

@@ -1,0 +1,50 @@
+.pass{
+  width: 92%;
+  height: 92.5vh;
+  position: absolute;
+  bottom: -45.9%;
+  right: -41.9%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  
+}
+
+.textBoxContainer {
+  height: 0vh;
+  position: absolute; 
+  top: 30%;
+  left: 50%; 
+}
+
+.textBox {
+  width: 40vw;
+  height: 32px;
+  padding: 8px;
+  border: none;
+  border-radius: 18.301pt;
+  font-size: 16px;
+  outline: none;
+  position: absolute; 
+  z-index:100;
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  top: 0%; 
+  background-color: #81b4cf; 
+  color: #333;
+  box-shadow: 8px 8px 4px #b2b2b2;
+}
+
+.button {
+  width: 10vw;
+  height: 48px;
+  border: none;
+  border-radius: 18.301pt;
+  font-size: 16px;
+  position: absolute; 
+  z-index:100;
+  right: 0%; 
+  transform: translate(210%, -50%);
+  top: 0%; 
+  background-color: #368dbd; 
+  color: white; 
+}

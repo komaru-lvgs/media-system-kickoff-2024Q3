@@ -1,0 +1,231 @@
+.main {
+  overflow: "hidden";
+}
+.image {
+  z-index: 3;
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  width: 1512px;
+}
+
+.button {
+  z-index: 4;
+  position: absolute;
+  top: 85%;
+  left: 35%;
+}
+
+.answer {
+  z-index: 4;
+  position: absolute;
+  &.index0 {
+    top: 460px;
+    left: 330px;
+  } 
+  &.index1 {
+    top: 460px;
+    left: 1090px;
+  } 
+  &.index2 {
+    top: 1155px;
+    left: 385px;
+  }
+  &.index3 {
+    top: 1155px;
+    left: 1140px;
+  }
+  &.index4 {
+    top: 1750px;
+    left: 145px;
+  }
+  &.index5 {
+    top: 1750px;
+    left: 898px;
+  }
+  &.index6 {
+    top: 2580px;
+    left: -55px;
+  }
+
+  &.index7 {
+    top: 2580px;
+    left: 700px;
+  }
+  &.index8 {
+    top: 3040px;
+    left: 165px;
+  }
+  &.index9 {
+    top: 3040px;
+    left: 925px;
+  }
+  &.index10 {
+    top: 3900px;
+    left: -140px;
+  } 
+  &.index11 {
+    top: 3900px;
+    left: 615px;
+  } 
+  &.index12 {
+    top: 4900px;
+    left: 451px;
+  }
+  &.index13 {
+    top: 4900px;
+    left: 1203px;
+  }
+  &.index14 {
+    top: 5195px;
+    left: -185px;
+  }
+  &.index15 {
+    top: 5195px;
+    left: 568px;
+  }
+  &.index16 {
+    top: 5653px;
+    left: -28px;
+  }
+
+  &.index17 {
+    top: 5653px;
+    left: 707px;
+  }
+  &.index18 {
+    top: 6456px;
+    left: 300px;
+  }
+  &.index19 {
+    top: 6456px;
+    left: 1055px;
+  }
+}
+
+ //テスト用
+.clickRange{
+  z-index: 2;
+  position: absolute;
+  &.index0{
+    top: 585px;
+    left: 550px;
+    width: 90px;
+    height: 45px;
+  }
+  &.index1{
+    top: 585px;
+    left: 1315px;
+    width: 80px;
+    height: 45px;
+  }
+  &.index2{
+    top: 1282px;
+    left: 633px;
+   width: 35px;
+    height: 35px;
+  }
+  &.index3{
+    top: 1282px;
+    left: 1388px;
+    width: 35px;
+    height: 35px;
+  }
+  &.index4{
+  top: 1875px;
+  left: 390px;
+  width: 40px;
+  height: 40px;
+  }
+  &.index5{
+  top: 1877px;
+  left: 1145px;
+  width: 40px;
+  height:40px;
+  }
+  &.index6{
+  top: 2710px;
+  left: 190px;
+  width: 40px;
+  height: 30px;
+  }
+  &.index7{
+  top: 2710px;
+  left: 945px;
+  width: 40px;
+  height: 30px;
+  }
+  &.index8{
+  top: 3160px;
+  left: 390px;
+  width: 80px;
+  height:50px;
+  }
+  &.index9{
+  top: 3160px;
+  left: 1160px;
+  width: 60px;
+  height: 50px;
+  }
+  &.index10{
+  top: 4035px;
+  left: 105px;
+  width: 45px;
+  height: 30px;
+  }
+  &.index11{
+  top: 4035px;
+  left: 858px;
+  width: 45px;
+  height: 30px;
+  }
+  &.index12{
+  top: 5010px;
+  left: 680px;
+  width: 75px;
+  height: 70px; 
+  }
+  &.index13{
+  top: 5010px;
+  left: 1430px;
+  width: 75px;
+  height: 70px;
+  }
+  &.index14{
+  top: 5305px;
+  left: 40px;
+  width: 80px;
+  height: 60px;
+  }
+  &.index15{
+  top: 5305px;
+  left: 794px;
+  width: 80px;
+  height: 60px;
+  }
+  &.index16{
+  top: 5765px;
+  left: 195px;
+  width: 85px;
+  height: 68px;
+  }
+  &.index17{
+  top: 5765px;
+  left: 930px;
+  width: 85px;
+  height: 75px;
+  }
+  &.index18{
+  top: 6560px;
+  left: 520px;
+  width: 90px;
+  height: 75px;
+  }
+  &.index19{
+  top: 6560px;
+  left: 1275px;
+  width: 90px;
+  height: 75px;
+  }
+}
+    

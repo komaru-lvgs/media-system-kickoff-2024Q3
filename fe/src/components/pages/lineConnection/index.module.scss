@@ -1,0 +1,265 @@
+.setumei {
+  width: 100%;
+  height: 100%;
+}
+
+.start {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+  border-radius: 18pt;
+}
+.startButton {
+  z-index: 4;
+  position: absolute;
+  top: 90%;
+  left: 37%;
+}
+
+.header {
+  display: flex;
+}
+
+.button {
+  padding-top: 20px;
+}
+
+.main {
+  background-color: #fffaf0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cover {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.background {
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  bottom: 0%;
+}
+
+.button1 {
+  border-radius: 50pt;
+  cursor: pointer;
+  padding: 1% 1%;
+  background: #b7cc9d;
+  line-height: 1em;
+  opacity: 1;
+  transition: 0.3s;
+  box-shadow: 8px 8px 4px #666666;
+  z-index: 2;
+  margin: -2.1% auto;
+  position: absolute;
+  top: 51%;
+  left: 18.5%;
+}
+
+.button1:hover {
+  box-shadow: none;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.button2 {
+  border-radius: 50pt;
+  cursor: pointer;
+  padding: 1% 1%;
+  background: #b7cc9d;
+  line-height: 1em;
+  opacity: 1;
+  transition: 0.3s;
+  box-shadow: 8px 8px 4px #666666;
+  z-index: 2;
+  margin: -2.1% auto;
+  position: absolute;
+  top: 51%;
+  left: 34%;
+}
+.button2:hover {
+  box-shadow: none;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.button3 {
+  border-radius: 50pt;
+  cursor: pointer;
+  padding: 1% 1%;
+  background: #b7cc9d;
+  line-height: 1em;
+  opacity: 1;
+  transition: 0.3s;
+  box-shadow: 8px 8px 4px #666666;
+  z-index: 2;
+  margin: -2.1% auto;
+  position: absolute;
+  top: 51%;
+  left: 49%;
+}
+
+.button3:hover {
+  box-shadow: none;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.button4 {
+  border-radius: 50pt;
+  cursor: pointer;
+  padding: 1% 1%;
+  background: #b7cc9d;
+  line-height: 1em;
+  opacity: 1;
+  transition: 0.3s;
+  box-shadow: 8px 8px 4px #666666;
+  z-index: 2;
+  margin: -2.1% auto;
+  position: absolute;
+  top: 51%;
+  left: 65%;
+}
+.button4:hover {
+  box-shadow: none;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.button5 {
+  border-radius: 50pt;
+  cursor: pointer;
+  padding: 1% 1%;
+  background: #b7cc9d;
+  line-height: 1em;
+  opacity: 1;
+  transition: 0.3s;
+  box-shadow: 8px 8px 4px #666666;
+  z-index: 2;
+  margin: -2.1% auto;
+  position: absolute;
+  top: 51%;
+  left: 80%;
+}
+.button5:hover {
+  box-shadow: none;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.button6 {
+  border-radius: 50pt;
+  cursor: pointer;
+  padding: 1% 1%;
+  background: #b7cc9d;
+  line-height: 1em;
+  opacity: 1;
+  transition: 0.3s;
+  box-shadow: 8px 8px 4px #666666;
+  z-index: 2;
+  margin: -2.1% auto;
+  position: absolute;
+  top: 78%;
+  left: 18.5%;
+}
+.button6:hover {
+  box-shadow: none;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.button7 {
+  border-radius: 50pt;
+  cursor: pointer;
+  padding: 1% 1%;
+  background: #b7cc9d;
+  line-height: 1em;
+  opacity: 1;
+  transition: 0.3s;
+  box-shadow: 8px 8px 4px #666666;
+  z-index: 2;
+  margin: -2.1% auto;
+  position: absolute;
+  top: 78%;
+  left: 34%;
+}
+.button7:hover {
+  box-shadow: none;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.button8 {
+  border-radius: 50pt;
+  cursor: pointer;
+  padding: 1% 1%;
+  background: #b7cc9d;
+  line-height: 1em;
+  opacity: 1;
+  transition: 0.3s;
+  box-shadow: 8px 8px 4px #666666;
+  z-index: 2;
+  margin: -2.1% auto;
+  position: absolute;
+  top: 78%;
+  left: 49%;
+}
+.button8:hover {
+  box-shadow: none;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.button9 {
+  border-radius: 50pt;
+  cursor: pointer;
+  padding: 1% 1%;
+  background: #b7cc9d;
+  line-height: 1em;
+  opacity: 1;
+  transition: 0.3s;
+  box-shadow: 8px 8px 4px #666666;
+  z-index: 2;
+  margin: -2.1% auto;
+  position: absolute;
+  top: 78%;
+  left: 65%;
+}
+.button9:hover {
+  box-shadow: none;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.button10 {
+  border-radius: 50pt;
+  cursor: pointer;
+  padding: 1% 1%;
+  background: #b7cc9d;
+  line-height: 1em;
+  opacity: 1;
+  transition: 0.3s;
+  box-shadow: 8px 8px 4px #666666;
+  z-index: 2;
+  margin: -2.1% auto;
+  position: absolute;
+  top: 78%;
+  left: 80%;
+}
+.button10:hover {
+  box-shadow: none;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.elmPoint {
+  position: absolute;
+  width: 0;
+  height: 0;
+}

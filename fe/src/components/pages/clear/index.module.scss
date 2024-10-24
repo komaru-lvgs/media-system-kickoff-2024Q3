@@ -1,0 +1,36 @@
+.downloadButton {
+  display       : inline-block;
+  border-radius : 18.301pt;          
+  font-size     : 90%;        
+  text-align    : center;      
+  cursor        : pointer;     
+  padding       : 1.5% 8%;  
+  background    : #afd69b;     
+  color         : #1b1b53;    
+  line-height   : 1em;        
+  opacity       : 1;           
+  transition    : .3s;        
+  box-shadow    : 8px 8px 4px #666666;  
+  z-index       : 2;
+  margin: -2.1% auto; 
+  position: absolute;
+  top: 95%;
+  left: 40%;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.downloadButton:hover{
+  box-shadow    : none;   
+  text-decoration: none;    
+  opacity       : 0.8;      
+}
+
+.team{
+  width: 65%;
+  height: 62.5%;
+  position: absolute;
+  bottom: 13%;
+  right: 17.5%;
+  border-radius: 18pt;
+}

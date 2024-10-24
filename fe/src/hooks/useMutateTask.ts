@@ -2,9 +2,11 @@ import axios from 'axios'
 import { useQueryClient, useMutation } from '@tanstack/react-query'
 import { Task } from '../types'
 import useStore from '../store'
+import { useError } from '../hooks/useError'
 
 export const useMutateTask = () => {
   const queryClient = useQueryClient()
+  const { switchErrorHandling } = useError()
   const resetEditedTask = useStore((state) => state.resetEditedTask)
 
   const createTaskMutation = useMutation(
@@ -20,9 +22,9 @@ export const useMutateTask = () => {
       },
       onError: (err: any) => {
         if (err.response.data.message) {
-          alert("だめ1")
+          switchErrorHandling(err.response.data.message)
         } else {
-          alert("だめ2")
+          switchErrorHandling(err.response.data)
         }
       },
     }
@@ -47,9 +49,9 @@ export const useMutateTask = () => {
       },
       onError: (err: any) => {
         if (err.response.data.message) {
-          alert("だめ3")
+          switchErrorHandling(err.response.data.message)
         } else {
-          alert("だめ4")
+          switchErrorHandling(err.response.data)
         }
       },
     }
@@ -70,9 +72,9 @@ export const useMutateTask = () => {
       },
       onError: (err: any) => {
         if (err.response.data.message) {
-          alert("だめ5")
+          switchErrorHandling(err.response.data.message)
         } else {
-          alert("だめ6")
+          switchErrorHandling(err.response.data)
         }
       },
     }
