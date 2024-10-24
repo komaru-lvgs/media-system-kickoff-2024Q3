@@ -5,7 +5,9 @@ import '../../atoms/cardColor.scss'
 import { useLocation, useNavigate } from 'react-router-dom'
 
 export const Card: React.FC = () => {
-  // ------------データ部分
+  // ------------仮のデータ部分
+
+  // TODO: データベースからお題・カード内容・対戦相手のグループ情報を取得
 
   // お題
   const question = 'エンジニアとして喜ぶ瞬間'
@@ -44,7 +46,7 @@ export const Card: React.FC = () => {
 
   // 読み込み時の処理
   useEffect(() => {
-    // クエリパラメータを確認
+    // クエリパラメータが適切か確認
     if (
       isOA < 0 ||
       1 < isOA ||
@@ -112,9 +114,10 @@ export const Card: React.FC = () => {
       return
     }
 
-    // TODO: ここにデータ送信処理を書く
+    // TODO: ここに回答送信処理を書く
 
-    window.location.href = '/waiting'
+    // 待ち画面に遷移
+    window.location.href = `/waiting?oa=${isOA}&group=${groupID}&question=${questionID}`
   }
 
   // 確認画面でカードを描画する
@@ -161,12 +164,14 @@ export const Card: React.FC = () => {
             ))}
           </div>
           <div className={styles.buttonColumn}>
-            <img
-              src="/images/group.png"
-              className={styles.groupMemberButton}
-              onClick={handleGroupButton}
-              alt="group"
-            />
+            {isOA ? (
+              <img
+                src="/images/group.png"
+                className={styles.groupMemberButton}
+                onClick={handleGroupButton}
+                alt="group"
+              />
+            ) : null}
             <img
               src="/images/confirmation.png"
               className={styles.confirmation}
@@ -194,7 +199,7 @@ export const Card: React.FC = () => {
                 />
               </div>
               <div className={styles.modalMessage}>
-                以下の内容で投票します
+                以下の内容で回答します
                 <br />
                 よろしいですか？
               </div>
@@ -234,7 +239,7 @@ export const Card: React.FC = () => {
             <div className={styles.modalBox}>
               <div className={styles.groupHeader}>
                 <div className={styles.groupHeadText}>
-                  回答を予想するグループは...
+                  回答を考えたグループは...
                 </div>
                 <div className={styles.groupOpponent}>
                   {groupInformation['opponentID']}

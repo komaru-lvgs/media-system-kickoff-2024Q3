@@ -15,8 +15,6 @@ export const ErrorPage: React.FC<ErrorPageProperties> = ({ statusCode }) => {
   const location = useLocation()
   const { redirectCode }: ErrorRedirectProperties = location.state || {}
 
-  console.log(redirectCode)
-  
   if (redirectCode !== undefined) statusCode = redirectCode
 
   let message = ''
