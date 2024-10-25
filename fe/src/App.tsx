@@ -21,7 +21,7 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { TimerContext } from './hooks/useTimer'
 import { Twister } from './components/pages/twister'
-import { Card, ErrorPage, Result, Waiting } from './components/pages'
+import { Name, Card, ErrorPage, Result, Waiting } from './components/pages'
 
 const App = () => {
   useEffect(() => {
@@ -42,10 +42,10 @@ const App = () => {
           <Routes>
             
             {/* [WHY]:優先的に表示 */}
+            <Route path="/name" element={<Name />}/>
             <Route path="/result" element={<Result />} />
             <Route path="/card" element={<Card />} />
             <Route path="/waiting" element={<Waiting />} />
-            
             
             <Route path="/" element={<Auth />} />
             <Route path="/todo" element={<Todo />} />
