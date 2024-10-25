@@ -81,7 +81,7 @@ export const Card: React.FC = () => {
   if (
     question === undefined ||
     cardData === undefined ||
-    groupInformation === undefined
+    groupInformation === undefined 
   ) {
     return (
       <>
