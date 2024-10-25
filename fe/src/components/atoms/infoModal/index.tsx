@@ -10,9 +10,11 @@ export const InfoModal: React.FC<InfoModalProperties> = ({
   iconPath,
   message,
 }) => {
-  var splitMessage = message.split('<br/>').map((line) => {
+  // 改行タグは改行させる
+  let splitMessage = message.split('<br/>').map((line) => {
     return <p>{line}</p>
   })
+
   return (
     <>
       <div className={styles.container}>

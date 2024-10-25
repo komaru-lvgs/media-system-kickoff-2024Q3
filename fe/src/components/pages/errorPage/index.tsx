@@ -6,18 +6,12 @@ type ErrorPageProperties = {
   statusCode: number
 }
 
-type ErrorRedirectProperties = {
-  redirectCode: number
-}
-
 export const ErrorPage: React.FC<ErrorPageProperties> = ({ statusCode }) => {
-  // リダイレクトの場合も考慮
-  const location = useLocation()
-  const { redirectCode }: ErrorRedirectProperties = location.state || {}
-
-  console.log(redirectCode)
-  
-  if (redirectCode !== undefined) statusCode = redirectCode
+  // エラー番号のクエリ
+  const search = useLocation().search
+  const query = new URLSearchParams(search)
+  const redirectCode = query.get('status')
+  if (redirectCode !== null) statusCode = Number(redirectCode)
 
   let message = ''
   switch (statusCode) {
@@ -36,7 +30,7 @@ export const ErrorPage: React.FC<ErrorPageProperties> = ({ statusCode }) => {
     case 503:
       message = '503 サービスが利用できません'
       break
-    case undefined:
+    default:
       message = 'エラーが発生しました'
       break
   }

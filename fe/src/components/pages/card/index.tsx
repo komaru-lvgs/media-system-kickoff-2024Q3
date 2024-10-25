@@ -1,62 +1,46 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { SingleCard } from '../../atoms'
 import styles from './index.module.scss'
 import '../../atoms/cardColor.scss'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
+import { ErrorPage } from '../errorPage'
+
+type CardDataObject = {
+  color: string
+  message: string
+}[]
+
+type GroupInformationObject = {
+  opponentID: number
+  opponentName: string
+  member: {
+    name: string
+    face: string
+  }[]
+}
 
 export const Card: React.FC = () => {
-  // ------------データ部分
-
-  // お題
-  const question = 'エンジニアとして喜ぶ瞬間'
-
-  // カード内容
-  const cardData = [
-    { color: 'red', message: 'プログラムが正常に動いた時' },
-    { color: 'blue', message: '課題チェックが上手く進んだ時' },
-    { color: 'green', message: 'バグの原因が分かった時' },
-    { color: 'yellow', message: '基本情報技術者試験で合格した時' },
-    { color: 'purple', message: '仕事を済ませて早く退勤できた時' },
-  ]
-
-  // グループ情報
-  const groupInformation = {
-    opponentID: 5,
-    opponentName: '〜結構保守的〜',
-    member: [
-      { name: '小丸 友梨', face: './images/face/小丸友梨.png' },
-      { name: '黒田 光咲', face: './images/face/黒田光咲.png' },
-      { name: '林 幸多郎', face: './images/face/林幸多郎.png' },
-      { name: '宇田 知生', face: './images/face/宇田知生.png' },
-      { name: '馬場 純一', face: './images/face/小島洋明.png' },
-    ],
-  }
-
-  // ---------------------
-
-  // クエリパラメータを取得する
+  // クエリパラメータを取得
   const search = useLocation().search
   const query = new URLSearchParams(search)
   const isOA = Number(query.get('oa'))
   const groupID = query.get('group')
   const questionID = query.get('question')
-  const navigate = useNavigate()
+  if (
+    isOA < 0 ||
+    1 < isOA ||
+    Number.isNaN(isOA) ||
+    groupID === null ||
+    questionID === null
+  ) {
+    window.location.href = '/error?status=500'
+  }
 
-  // 読み込み時の処理
-  useEffect(() => {
-    // クエリパラメータを確認
-    if (
-      isOA < 0 ||
-      1 < isOA ||
-      Number.isNaN(isOA) ||
-      groupID === null ||
-      questionID === null
-    ) {
-      navigate('/500', { state: { redirectCode: 500 } })
-    }
-
-    // TODO: グループIDからグループ名を問い合わせる
-  }, [])
+  // お題
+  const [question, setQuestion] = useState<string>()
+  const [cardData, setCardData] = useState<CardDataObject>()
+  const [groupInformation, setGroupInformation] =
+    useState<GroupInformationObject>()
 
   // カードの状態 (0は押されていない、1から5は押した順番)
   const [cardsState, setCardsState] = useState([0, 0, 0, 0, 0])
@@ -66,6 +50,45 @@ export const Card: React.FC = () => {
 
   // グループモーダルを表示するかどうか？
   const [groupModalShow, setGroupModalShow] = useState(false)
+
+  // 読み込み時の処理
+  useEffect(() => {
+    // 問題情報を取得
+    setQuestion('エンジニアとして喜ぶ瞬間')
+    setCardData([
+      { color: 'red', message: 'プログラムが正常に動いた時' },
+      { color: 'blue', message: '課題チェックが上手く進んだ時' },
+      { color: 'green', message: 'バグの原因が分かった時' },
+      { color: 'yellow', message: '基本情報技術者試験で合格した時' },
+      { color: 'purple', message: '仕事を済ませて早く退勤できた時' },
+    ])
+    setGroupInformation({
+      opponentID: 5,
+      opponentName: '〜結構保守的〜',
+      member: [
+        { name: '小丸 友梨', face: './images/face/小丸友梨.png' },
+        { name: '黒田 光咲', face: './images/face/黒田光咲.png' },
+        { name: '林 幸多郎', face: './images/face/林幸多郎.png' },
+        { name: '宇田 知生', face: './images/face/宇田知生.png' },
+        { name: '馬場 純一', face: './images/face/小島洋明.png' },
+      ],
+    })
+
+    // TODO: グループIDからグループ名を問い合わせる
+  }, [])
+
+  // 取得できなかったらエラー
+  if (
+    question === undefined ||
+    cardData === undefined ||
+    groupInformation === undefined 
+  ) {
+    return (
+      <>
+        <ErrorPage statusCode={500} />
+      </>
+    )
+  }
 
   // 順番を選択
   const handleClick = (cardNumber: number) => {
@@ -112,9 +135,10 @@ export const Card: React.FC = () => {
       return
     }
 
-    // TODO: ここにデータ送信処理を書く
+    // TODO: ここに回答送信処理を書く
 
-    window.location.href = '/waiting'
+    // 待ち画面に遷移
+    window.location.href = `/waiting?oa=${isOA}&group=${groupID}&question=${questionID}`
   }
 
   // 確認画面でカードを描画する
@@ -150,10 +174,10 @@ export const Card: React.FC = () => {
         </div>
         <div className={styles.rowItems}>
           <div className={styles.cards}>
-            {cardData.map((singleCard, index) => (
+            {cardData.map((value, index) => (
               <SingleCard
-                color={singleCard.color}
-                message={singleCard.message}
+                color={value.color}
+                message={value.message}
                 cardIndex={index}
                 cardState={cardsState[index]}
                 handleClick={handleClick}
@@ -161,12 +185,14 @@ export const Card: React.FC = () => {
             ))}
           </div>
           <div className={styles.buttonColumn}>
-            <img
-              src="/images/group.png"
-              className={styles.groupMemberButton}
-              onClick={handleGroupButton}
-              alt="group"
-            />
+            {isOA ? (
+              <img
+                src="/images/group.png"
+                className={styles.groupMemberButton}
+                onClick={handleGroupButton}
+                alt="group"
+              />
+            ) : null}
             <img
               src="/images/confirmation.png"
               className={styles.confirmation}
@@ -194,7 +220,7 @@ export const Card: React.FC = () => {
                 />
               </div>
               <div className={styles.modalMessage}>
-                以下の内容で投票します
+                以下の内容で回答します
                 <br />
                 よろしいですか？
               </div>
@@ -234,7 +260,7 @@ export const Card: React.FC = () => {
             <div className={styles.modalBox}>
               <div className={styles.groupHeader}>
                 <div className={styles.groupHeadText}>
-                  回答を予想するグループは...
+                  回答を考えたグループは...
                 </div>
                 <div className={styles.groupOpponent}>
                   {groupInformation['opponentID']}

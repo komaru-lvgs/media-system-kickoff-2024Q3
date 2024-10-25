@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Card, Waiting, Result, ErrorPage } from './components'
 import {
   Auth,
   MiniGame,
@@ -41,6 +42,13 @@ const App = () => {
       <TimerContext.Provider value={{ timeNumber, setTimeNumber }}>
         <div className="App">
           <Routes>
+            
+            {/* [WHY]:優先的に表示 */}
+            <Route path="/result" element={<Result />} />
+            <Route path="/card" element={<Card />} />
+            <Route path="/waiting" element={<Waiting />} />
+            
+            
             <Route path="/" element={<Auth />} />
             <Route path="/todo" element={<Todo />} />
             <Route path="/start" element={<Start />} />
@@ -63,8 +71,9 @@ const App = () => {
             <Route path="/wherefrom" element={<WhereFrom />} />
             <Route path="/twister-24-training" element={<Twister />} />
             <Route path="/whack-a-mole" element={<WhackMole />} />
-            <Route path="/card" element={<Card />} />
-            <Route path="/waiting" element={<Waiting />} />
+            
+            
+            {/* エラーページ */}
             <Route path="*" element={<ErrorPage statusCode={404} />} />
           </Routes>
         </div>
