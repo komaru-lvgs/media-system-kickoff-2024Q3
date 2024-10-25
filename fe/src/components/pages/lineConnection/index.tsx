@@ -1,8 +1,11 @@
 import React, { useRef, useState } from 'react'
 import styles from './index.module.scss'
 import { LineConnectionProgress } from '../../../libs/lineConnection'
-import { Button, Life, ScoreModal, Timer } from '../../atoms'
 import { useLineConnection } from '../../../hooks/useLineConnection'
+import { Button } from '../../atoms/button'
+import { Timer } from '../../atoms/timer'
+import { Life } from '../../atoms/life'
+import { ScoreModal } from '../../atoms/scoreModal'
 
 export const LineConnection: React.FC = () => {
   const [currentScreen, setCurrentScreen] = useState<LineConnectionProgress>(

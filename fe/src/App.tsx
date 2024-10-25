@@ -1,29 +1,27 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { Card, Waiting, Result, ErrorPage } from './components'
-import {
-  Auth,
-  MiniGame,
-  Start,
-  Todo,
-  Clear,
-  Mistakes,
-  Password,
-  WhereFrom,
-  RankingPerTeam,
-  Puzzle,
-  NervousBreakdown,
-  RankingPerDepartment,
-  Flash,
-  FaceSwap,
-  LineConnection,
-  WhackMole,
-  Rhythm,
-} from './components'
+import { Auth } from './components/pages/auth'
+import { Todo } from './components/pages/todo'
+import { Start } from './components/pages/start'
+import { Password } from './components/pages/password'
+import { RankingPerTeam } from './components/pages/rankingPerTeam'
+import { RankingPerDepartment } from './components/pages/rankingPerDepartment'
+import { WhackMole } from './components/pages/whackMole'
+import { MiniGame } from './components/pages/miniGame'
+import { WhereFrom } from './components/pages/wherefrom'
+import { Rhythm } from './components/pages/rhythm'
+import { LineConnection } from './components/pages/lineConnection'
+import { Mistakes } from './components/pages/mistakes'
+import { Clear } from './components/pages/clear'
+import { Puzzle } from './components/pages/puzzle'
+import { Flash } from './components/pages/flash'
+import { FaceSwap } from './components/pages/faceSwap'
+import { NervousBreakdown } from './components/pages/nervousBreakdown'
 import { CsrfToken } from './types'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { TimerContext } from './hooks/useTimer'
 import { Twister } from './components/pages/twister'
+import { Card, ErrorPage, Result, Waiting } from './components/pages'
 
 const App = () => {
   useEffect(() => {

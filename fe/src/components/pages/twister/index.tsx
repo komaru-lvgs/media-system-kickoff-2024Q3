@@ -2,7 +2,9 @@ import React from 'react'
 import styles from './index.module.scss'
 import { useTwister } from '../../../hooks/useTwister'
 import { twisterProgress } from '../../../libs/twister'
-import { Button, ScoreModal, Timer } from '../../atoms'
+import { Button } from '../../atoms/button'
+import { Timer } from '../../atoms/timer'
+import { ScoreModal } from '../../atoms/scoreModal'
 
 export const Twister: React.FC = () => {
   const {

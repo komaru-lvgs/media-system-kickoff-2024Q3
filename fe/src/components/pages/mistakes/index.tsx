@@ -3,7 +3,8 @@ import { useScroll } from '../../../hooks/useScroll'
 import { useState } from 'react'
 import { getClassNames } from '../../../libs/style'
 import { ScreenProgress, range } from '../../../libs/mistakes'
-import { Button, ScoreModal } from '../../atoms'
+import { Button } from '../../atoms/button'
+import { ScoreModal } from '../../atoms/scoreModal'
 
 export const Mistakes: React.FC = () => {
   const [currentScreen, setCurrentScreen] = useState<ScreenProgress>(

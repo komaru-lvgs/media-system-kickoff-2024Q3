@@ -1,8 +1,9 @@
 import React from 'react'
 import { allRow } from '../../../libs/faceSwap'
 import { getClassNames } from '../../../libs/style'
-import { Button, Timer } from '../../atoms'
 import styles from './index.module.scss'
+import { Button } from '../../atoms/button'
+import { Timer } from '../../atoms/timer'
 
 type FaceSwapGameProperties = {
   currentIndexList: number[]

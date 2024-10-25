@@ -1,9 +1,12 @@
 import React from 'react'
 import style from './index.module.scss'
 import { useWhackMole } from '../../../hooks/useWhackMole'
-import { Timer, Mogura, Life, ScoreModal } from '../../atoms'
-import { Button } from '../../atoms'
 import { ScreenProgress, timerSecond } from '../../../libs/mole'
+import { Button } from '../../atoms/button'
+import { Life } from '../../atoms/life'
+import { Timer } from '../../atoms/timer'
+import { Mogura } from '../../atoms/mogura'
+import { ScoreModal } from '../../atoms/scoreModal'
 
 export const WhackMole: React.FC = () => {
   const {

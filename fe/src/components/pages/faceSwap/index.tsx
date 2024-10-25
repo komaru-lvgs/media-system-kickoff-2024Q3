@@ -1,10 +1,11 @@
 import React from 'react'
 import styles from './index.module.scss'
-import { Button, ScoreModal } from '../../atoms'
 import { ScreenProgress } from '../../../libs/faceSwap'
 
 import { useFaceSwap } from '../../../hooks/useFaceSwap'
 import { FaceSwapGame } from '../../organisms/faceSwapGame'
+import { Button } from '../../atoms/button'
+import { ScoreModal } from '../../atoms/scoreModal'
 
 export const FaceSwap: React.FC = () => {
   const {

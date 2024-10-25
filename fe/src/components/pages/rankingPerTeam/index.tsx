@@ -1,8 +1,8 @@
 import React from 'react'
 import { useQuerySortedTeams } from "../../../hooks/useQuerySortedTeams"
 import { useScroll } from '../../../hooks/useScroll'
-import { RankButton } from '../../atoms'
 import styles from "./index.module.scss"
+import { RankButton } from '../../atoms/rankButton'
 
 export const RankingPerTeam: React.FC =() => {
   const { data, isLoading } = useQuerySortedTeams()

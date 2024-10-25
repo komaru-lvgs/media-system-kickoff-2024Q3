@@ -1,8 +1,11 @@
 import { JapanMap } from '../../organisms'
 import { useWhereFrom } from '../../../hooks/useWhereFrom'
 import style from './index.module.scss'
-import { Button, Life, ScoreModal, Timer } from '../../atoms'
 import { QuestionProgress, timerSecond } from '../../../libs/wherefrom'
+import { Button } from '../../atoms/button'
+import { Life } from '../../atoms/life'
+import { Timer } from '../../atoms/timer'
+import { ScoreModal } from '../../atoms/scoreModal'
 
 export const WhereFrom: React.FC = () => {
   const {

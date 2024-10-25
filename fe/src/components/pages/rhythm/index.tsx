@@ -1,9 +1,12 @@
 import { useRef, useState } from 'react'
 import styles from './index.module.scss'
-import { Button, FallingImage, ScoreModal, Timer } from '../../atoms'
 import { ScreenProgress } from '../../../libs/mistakes'
 import { useRhythm } from '../../../hooks/useRhythm'
 import { timerSecond } from '../../../libs/rhythm'
+import { FallingImage } from '../../atoms/fallingImage'
+import { Timer } from '../../atoms/timer'
+import { ScoreModal } from '../../atoms/scoreModal'
+import { Button } from '../../atoms/button'
 
 export const Rhythm = () => {
   const [currentScreen, setCurrentScreen] = useState<ScreenProgress>(
