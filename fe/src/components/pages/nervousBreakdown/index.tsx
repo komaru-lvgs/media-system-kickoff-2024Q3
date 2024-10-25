@@ -5,9 +5,11 @@ import {
   cardList,
   timerSecond,
 } from '../../../libs/nervousBreakdown'
-import { Button, ScoreModal, Timer } from '../../atoms'
 
 import { useNervousBreakdown } from '../../../hooks/useNervousBreakdown'
+import { Button } from '../../atoms/button'
+import { Timer } from '../../atoms/timer'
+import { ScoreModal } from '../../atoms/scoreModal'
 
 export const NervousBreakdown: React.FC = () => {
   const [currentScreen, setCurrentScreen] = useState<NervousBreakdownProgress>(

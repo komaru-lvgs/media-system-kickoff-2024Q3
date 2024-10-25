@@ -2,7 +2,7 @@
 import { useCallback } from "react"
 import { useMutateTeamPoint } from "../../../hooks/useMutationTeamPoint"
 import { useQueryTeam } from "../../../hooks/useQueryTeam"
-import { Timer } from "../../atoms"
+import { Timer } from "../../atoms/timer"
 
 //TODO: 仮で作成したため、後で修正する
 export const MiniGame: React.FC =() => {

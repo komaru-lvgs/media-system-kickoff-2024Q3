@@ -1,6 +1,6 @@
 import React from 'react'
 import { prefectures } from '../../../libs/prefecture'
-import { Prefecture } from '../../atoms'
+import { Prefecture } from '../../atoms/prefecture'
 
 type AreaProperties = {
   id: string

@@ -1,1 +1,3 @@
-export * from './area'
+export * from './atoms'
+export * from './molecules'
+export * from './pages'

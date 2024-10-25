@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import styles from './index.module.scss'
-import { Button, ScoreModal } from '../../atoms'
 import {
   FlashProgress,
   allAnswer,
@@ -9,6 +8,8 @@ import {
   questionItemList,
 } from '../../../libs/flash'
 import { FlashQuestion } from '../../organisms'
+import { Button } from '../../atoms/button'
+import { ScoreModal } from '../../atoms/scoreModal'
 
 //TODO: リファクタ
 export const Flash: React.FC = () => {
